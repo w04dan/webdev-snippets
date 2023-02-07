@@ -7,8 +7,9 @@
 body {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: 'Inter';
+    position: relative;
 }
 
 #cover {
@@ -19,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    z-index: 100;
 
     transform: translateX(0%);
     transition-property: none;
@@ -45,3 +47,16 @@ body {
     letter-spacing: 1vmin;
 }
 
+#menu {
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
