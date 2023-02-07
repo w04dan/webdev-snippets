@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+body {
+    background-color: magenta;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+}
+
+h1, h2, h3, a, p, span {
+    font-family: 'Inter';
+    font-weight: 400;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.icon {
+    width: 2vmin;
+    aspect-ratio: 1;
+    background-color: green;
+    border: .5vmin solid greenyellow;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid palevioletred;
+}
+
+nav > div {
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-left: 1px solid palevioletred;
+}
+
+.nav-logo {
+    justify-content: flex-start;
+}
+
+.nav-logo > a > .icon {
+    width: 3vmin;
+}
+
+.nav-link {
+    gap: 6rem;
+}
+
+.nav-logo,
+.nav-link {
+    flex-basis: calc(100% / 3);
+}
+
+.nav-social {
+    gap: 3rem;
+}
+
+.nav-social,
+.nav-contact {
+    flex-grow: 1;
+}
+
+main {
+    flex-grow: 1;
+}
+
+main > article {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+main > article > div {
+    height: 100%;
+}
+
+main > article > .description,
+main > article > .nav {
+    border-left: 1px solid palevioletred;
+}
+
+main > article > .title,
+main > article > .nav {
+    border-top: 1px solid palevioletred;
+}
+
+main > article > .image {
+    background: url(./assets/img1.jpg);
+    background-size: cover;
+    background-position: center;
+}
