@@ -19,6 +19,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    transform: translateX(0%);
+    transition-property: none;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 }
