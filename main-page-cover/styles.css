@@ -19,15 +19,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
+
     transform: translateX(0%);
     transition-property: none;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    transition-duration: 0.75s;
+    transition-timing-function: cubic-bezier(0.50, 0, 0.70, 0);
 }
 
 #cover > .intro {
     margin-left: 5vw;
     margin-bottom: 5vh;
+    user-select: none;
 }
 
 .intro > h3 {
