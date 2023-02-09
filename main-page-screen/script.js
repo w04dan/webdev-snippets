@@ -6,10 +6,12 @@ const dragbar = document.getElementById('cover-dragbar');
 // hover logic
 
 const dragDot = document.getElementById('drag-dot');
+const dragArrow = document.getElementById('drag-arrow');
 
 dragbar.addEventListener('mouseover', () => {
     dragbar.style.backgroundColor = `rgb(var(--bg-complement))`;
     dragDot.style.backgroundColor = `white`;
+    dragArrow.style.opacity = `100%`;
 });
 
 dragbar.addEventListener('mouseleave', () => {
@@ -17,6 +19,7 @@ dragbar.addEventListener('mouseleave', () => {
 
     dragbar.style.backgroundColor = `rgb(var(--bg-color))`;
     dragDot.style.backgroundColor = `rgb(var(--bg-color))`;
+    dragArrow.style.opacity = `0%`;
 })
 
 
@@ -31,7 +34,7 @@ const resetPosition = (e) => {
     }
     cover.dataset.startPosition = -1;
     cover.style.transitionProperty = `transform`;
-    if (translatePercent < -50) {
+    if (translatePercent < -40) {
         cover.style.transitionDuration = `${(100 + translatePercent) / 100 + .5}s`;
         cover.style.transform = `translate(-100%)`;
         cover.dataset.active = 2;
@@ -52,6 +55,7 @@ dragbar.addEventListener('mousedown', (e) => {
 root.addEventListener('mousemove', (e) => {
     if (cover.dataset.active !== '1' || cover.dataset.startPosition === '-1') return;
 
+    dragArrow.style.opacity = `0%`;
     const mouseDelta = parseFloat(cover.dataset.startPosition) - e.clientX;
     const maxDelta = window.innerWidth;
 
@@ -66,9 +70,10 @@ cover.addEventListener('transitionend', (e) => {
     if (cover.dataset.active === '2') return;
 
     if (e.propertyName === 'transform') {
-        setTimeout(() => {
-            cover.dataset.active = 1;
-        }, 100);
+        cover.dataset.active = 1;
+        // setTimeout(() => {
+        //     cover.dataset.active = 1;
+        // }, 100);
     }
 });
 
