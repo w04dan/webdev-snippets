@@ -1,6 +1,26 @@
-const root = document.getElementById("root");
-const cover = document.getElementById("cover");
-const dragbar = document.getElementById("cover-dragbar");
+const root = document.getElementById('root');
+const cover = document.getElementById('cover');
+const dragbar = document.getElementById('cover-dragbar');
+
+
+// hover logic
+
+const dragDot = document.getElementById('drag-dot');
+
+dragbar.addEventListener('mouseover', () => {
+    dragbar.style.backgroundColor = `rgb(var(--bg-complement))`;
+    dragDot.style.backgroundColor = `white`;
+});
+
+dragbar.addEventListener('mouseleave', () => {
+    if (cover.dataset.startPosition !== '-1') return;
+
+    dragbar.style.backgroundColor = `rgb(var(--bg-color))`;
+    dragDot.style.backgroundColor = `rgb(var(--bg-color))`;
+})
+
+
+// drag logic
 
 const resetPosition = (e) => {
     if (cover.dataset.active !== '1') return;
