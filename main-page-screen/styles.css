@@ -1,0 +1,74 @@
+:root {
+    --bg-color: 212 202 255;
+    --bg-complement: 202 189 255;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+.landing-page {
+    background-color: rgb(var(--bg-color));
+    height: 100vh;
+    width: 100vw;
+    user-select: none;
+
+    font-family: "Inter";
+
+    position: relative;
+}
+
+.landing-page > .intro-text {
+    position: absolute;
+    z-index: 5;
+    bottom: 5%;
+    left: 5%;
+}
+
+.landing-page > .intro-text > h3 {
+    font-weight: 300;
+    font-size: min(3vw, 10vh);
+    letter-spacing: .2vmin;
+    padding-bottom: 1vh;
+}
+
+.landing-page > .intro-text > h1 {
+    font-weight: 900;
+    font-size: min(10vw, 33vh);
+    letter-spacing: 1vmin;
+}
+
+.landing-page > .splash-text {
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
+    left: 20%;
+
+    color: rgb(255 255 255 / 40%);
+    font-size: min(10vw, 33vh);
+}
+
+.dragbar {
+    position: absolute;
+    right: 0;
+    width: 6%;
+    height: 100%;
+    
+    background-color: rgb(var(--bg-color));
+    transition: background-color .5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dragbar:hover {
+    background-color: rgb(var(--bg-complement));
+    transition: background-color .5s;
+}
+
+.dragbar > p {
+    font-size: 2vw;
+}
