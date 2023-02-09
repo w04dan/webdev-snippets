@@ -9,6 +9,10 @@
     padding: 0;    
 }
 
+#root {
+    background-color: black;
+}
+
 .landing-page {
     background-color: rgb(var(--bg-color));
     height: 100vh;
@@ -18,6 +22,11 @@
     font-family: "Inter";
 
     position: relative;
+
+    transform: none;
+    transition-property: none;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
 }
 
 .landing-page > .intro-text {
@@ -37,7 +46,7 @@
 .landing-page > .intro-text > h1 {
     font-weight: 900;
     font-size: min(10vw, 33vh);
-    letter-spacing: 1vmin;
+    letter-spacing: .7vw;
 }
 
 .landing-page > .splash-text {
@@ -69,6 +78,16 @@
     transition: background-color .5s;
 }
 
-.dragbar > p {
-    font-size: 2vw;
+.dragbar:hover > .drag-dot {
+    background-color: white;
+    transition: background-color .25s;
+}
+
+.dragbar > .drag-dot {
+    width: 30%;
+    aspect-ratio: 1;
+    
+    border-radius: 50%;
+    border: .4vw solid white;
+    transition: background-color .25s;
 }
