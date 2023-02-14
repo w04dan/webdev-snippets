@@ -1,0 +1,134 @@
+:root {
+    --border-width: 5px;
+    --border-color: black;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+}
+
+nav > div {
+    flex-basis: calc(100% / 3);
+    border-left: var(--border-width) solid var(--border-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+nav > div:nth-child(1) {
+    border-left: none;
+}
+
+nav > .nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+nav > .nav-logo > img {
+    height: 130%;
+    padding-left: 20px;
+    transform: translateY(20%);
+}
+
+nav > .nav-logo > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+nav > .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+nav > .nav-links > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+section > .image-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-basis: calc(2 * 100% / 3);
+}
+
+section > .image-carousel > .fake-image {
+    flex: 1;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+section > .image-carousel > .arrows {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+section > .image-carousel > .arrows > div {
+    flex: 1;
+}
+
+section > .image-carousel > .arrows > .right-arrow {
+    border-left: var(--border-width) solid var(--border-color);
+}
+
+section > .image-description {
+    flex-basis: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    border-left: var(--border-width) solid var(--border-color);
+}
+
+section > .image-description > .image-title {
+    height: 10vh;
+    border-bottom: var(--border-width) solid var(--border-color);
+
+    display: flex;
+    align-items: center;
+}
+
+section > .image-description > .image-title > h3 {
+    font-weight: 700;
+    font-size: 32px;
+
+    padding-left: 30px;
+}
+
+section > .image-description > .image-text {
+    flex: 1;
+}
+
+section > .image-description > .image-text > p {
+    font-weight: 400;
+    font-size: 20px;
+
+    padding-left: 30px;
+    padding-top: 30px;
+}
