@@ -16,6 +16,43 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
+    overflow: hidden;
+}
+
+main {
+    height: 100%;
+    position: relative;
+}
+
+main > section {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: transform 400ms ease;
+}
+
+main > section[data-status="inactive"] {
+    transform: translateX(-100%);
+    transition: none;
+}
+
+main > section[data-status="active"] {
+    transform: translateX(0%);
+}
+
+main > section[data-status="before"],
+main > section[data-status="becoming-active-from-before"] {
+    transform: translate(-100%);
+    transition: none;
+}
+
+main > section[data-status="after"],
+main > section[data-status="becoming-active-from-after"] {
+    transform: translate(100%);
+    transition: none;
 }
 
 nav {
@@ -26,7 +63,7 @@ nav {
 
 nav > div {
     flex-basis: calc(100% / 3);
-    border-left: var(--border-width) solid var(--border-color);
+    border-left: var(--border-width) solid var(--border-color); 
     border-bottom: var(--border-width) solid var(--border-color);
 }
 
@@ -67,6 +104,25 @@ nav > .nav-links > a {
     font-size: 20px;
 }
 
+nav > .nav-links > a:hover {
+    text-decoration: underline;
+}
+
+nav > .nav-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav > .nav-contact > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 20px;
+
+    padding-right: 30px;
+}
+
 section {
     display: flex;
     flex-direction: row;
@@ -83,6 +139,7 @@ section > .image-carousel {
 section > .image-carousel > .fake-image {
     flex: 1;
     border-bottom: var(--border-width) solid var(--border-color);
+    border-left: var(--border-width) solid var(--border-color); 
 }
 
 section > .image-carousel > .arrows {
@@ -93,10 +150,21 @@ section > .image-carousel > .arrows {
 
 section > .image-carousel > .arrows > div {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section > .image-carousel > .arrows > .left-arrow {
+    border-left: var(--border-width) solid var(--border-color);
 }
 
 section > .image-carousel > .arrows > .right-arrow {
     border-left: var(--border-width) solid var(--border-color);
+}
+
+section > .image-carousel > .arrows > .right-arrow > img {
+    rotate: 180deg;
 }
 
 section > .image-description {
@@ -104,6 +172,7 @@ section > .image-description {
     display: flex;
     flex-direction: column;
     border-left: var(--border-width) solid var(--border-color);
+    border-right: var(--border-width) solid var(--border-color);
 }
 
 section > .image-description > .image-title {
